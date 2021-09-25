@@ -1,0 +1,24 @@
+specVersion: 0.0.2
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: SiloFactory
+    network: rinkeby
+    source:
+      address: "0xAAc3Fb8732F415f8DE86Ae5819E16d6233e78423"
+      abi: SiloFactory
+      startBlock: 9300000
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - SiloCreated
+      abis:
+        - name: SiloFactory
+          file: SiloFactory\abis\SiloFactory.json
+      eventHandlers:
+        - event: SiloCreated(address,string)
+          handler: handleSiloCreated
+      file: SiloFactory\SiloFactory.wasm
