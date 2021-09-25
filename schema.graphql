@@ -1,6 +1,5 @@
-type ExampleEntity @entity {
+type Silo @entity {
   id: ID!
-  count: BigInt!
-  silo: Bytes! # address
-  name: String! # string
+  name: String! 
+  address: String! 
 }
