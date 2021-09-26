@@ -7,7 +7,7 @@ export function handleSiloCreated(event: SiloCreated): void {
   log.info('New Silo Market created event, name: {}', [event.params.name.toString()])
   let silo = new Silo(event.params.silo.toHex());
   silo.name = event.params.name;
-  silo.address = event.params.silo.toString();
+  silo.address = event.params.silo.toHexString();
   silo.save();
 }
 
