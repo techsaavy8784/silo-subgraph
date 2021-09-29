@@ -1,6 +1,24 @@
-import { BigInt, log } from "@graphprotocol/graph-ts"
-import { SiloFactory, SiloCreated } from "../generated/SiloFactory/SiloFactory"
-import { Silo } from "../generated/schema"
+import { BigInt, log } from "@graphprotocol/graph-ts";
+import { SiloFactory, SiloCreated } from "../generated/SiloFactory/SiloFactory";
+import { Silo } from "../generated/schema";
+import { store } from '@graphprotocol/graph-ts';
+
+
+/*
+type Silo @entity {
+  id: ID!
+  name: String! 
+  address: String! 
+  marketSize: BigDecimal!
+  totalBorrowed: BigDecimal!
+  depositApy: BigDecimal!
+  borrowApy: BigDecimal!
+  ---
+  oracle: String!
+  borrowed: BigDecimal!
+  available: BigDecimal!
+}
+*/
 
 
 export function handleSiloCreated(event: SiloCreated): void {
@@ -8,8 +26,20 @@ export function handleSiloCreated(event: SiloCreated): void {
   let silo = new Silo(event.params.silo.toHex());
   silo.name = event.params.name;
   silo.address = event.params.silo.toHexString();
+  silo.marketSize = 0;
+  silo.totalBorrowed = 0;
+  depositApy = 0;
+  borrowApy = 0;
   silo.save();
 }
+
+export function handleSiloRemoved(event: SiloCreated): void {
+  let silo = Silo.load(event.params.silo.toHex());
+
+  if (silo != null){
+    store.remove('Silo', silo.id);
+  }
+} 
 
 // export function handleSiloCreated(event: SiloCreated): void {
   // Entities can be loaded from the store using a string ID; this ID

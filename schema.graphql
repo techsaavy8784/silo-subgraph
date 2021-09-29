@@ -2,4 +2,11 @@ type Silo @entity {
   id: ID!
   name: String! 
   address: String! 
+  marketSize: BigDecimal!
+  totalBorrowed: BigDecimal!
+  depositApy: BigDecimal!
+  borrowApy: BigDecimal!
+  oracle: String!
+  borrowed: BigDecimal!
+  available: BigDecimal!
 }
