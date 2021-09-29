@@ -21,4 +21,6 @@ dataSources:
       eventHandlers:
         - event: SiloCreated(address,string)
           handler: handleSiloCreated
+        - event: SiloRemoved(address)
+          handler: handleSiloRemoved
       file: ./src/mapping.ts
