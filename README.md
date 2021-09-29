@@ -5,5 +5,5 @@
 silo markets subgraph on theGraph
 
 ## endpoint
-https://api.studio.thegraph.com/query/9379/silo/0.4
+https://api.studio.thegraph.com/query/9379/silo/0.7
 

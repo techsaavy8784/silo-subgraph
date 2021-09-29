@@ -2,6 +2,8 @@ type Silo @entity {
   id: ID!
   name: String! 
   address: String! 
+  bridgeAssetName: String!
+  bridgeAssetAddr: String!
   marketSize: BigDecimal!
   totalBorrowed: BigDecimal!
   depositApy: BigDecimal!
