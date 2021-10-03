@@ -2,6 +2,7 @@ type Silo @entity {
   id: ID!
   name: String! 
   address: String! 
+  symbol: String!
   bridgeAssetName: String!
   bridgeAssetAddr: String!
   marketSize: BigDecimal!
@@ -12,3 +13,4 @@ type Silo @entity {
   borrowed: BigDecimal!
   available: BigDecimal!
 }
+

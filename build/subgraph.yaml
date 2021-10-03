@@ -4,9 +4,9 @@ schema:
 dataSources:
   - kind: ethereum/contract
     name: SiloFactory
-    network: rinkeby
+    network: kovan
     source:
-      address: "0x6A5885D500c753B62f11Fd40e538c2BB20A497b7"
+      address: "0x9284C3b8BeDbE86FA4CdC0933003A631fEcE5787"
       abi: SiloFactory
       startBlock: 9300000
     mapping:
@@ -19,8 +19,6 @@ dataSources:
         - name: SiloFactory
           file: SiloFactory\abis\SiloFactory.json
       eventHandlers:
-        - event: SiloCreated(address,string)
+        - event: NewSilo(indexed address,indexed address,string,string)
           handler: handleSiloCreated
-        - event: SiloRemoved(address)
-          handler: handleSiloRemoved
       file: SiloFactory\SiloFactory.wasm
