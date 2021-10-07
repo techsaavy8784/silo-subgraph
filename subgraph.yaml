@@ -6,7 +6,7 @@ dataSources:
     name: SiloFactory
     network: kovan
     source:
-      address: "0x06dD43F4E758c4A760B292549f2091E09Ca58517"
+      address: '0x06dD43F4E758c4A760B292549f2091E09Ca58517'
       abi: SiloFactory
       startBlock: 27545907
     mapping:
@@ -22,3 +22,6 @@ dataSources:
         - event: NewSilo(indexed address,indexed address,string,string)
           handler: handleSiloCreated
       file: ./src/mapping.ts
+      
+      
+      
