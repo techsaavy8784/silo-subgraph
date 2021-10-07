@@ -6,7 +6,7 @@ dataSources:
     name: SiloFactory
     network: kovan
     source:
-      address: "0x9284C3b8BeDbE86FA4CdC0933003A631fEcE5787"
+      address: "0x828Bd34C9Ec210D7560Aa1719ae9da72F0439558"
       abi: SiloFactory
       startBlock: 27000000
     mapping:

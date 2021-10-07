@@ -3,6 +3,7 @@ type Silo @entity {
   name: String! 
   address: String! 
   symbol: String!
+  assetAddress: String!
   bridgeAssetName: String!
   bridgeAssetAddr: String!
   marketSize: BigDecimal!
