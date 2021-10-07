@@ -1,14 +1,14 @@
 specVersion: 0.0.2
 schema:
-  file: schema.graphql
+  file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: SiloFactory
-    network: kovan
+    network: {{network}}
     source:
-      address: "0x06dD43F4E758c4A760B292549f2091E09Ca58517"
+      address: '{{silofactory}}'
       abi: SiloFactory
-      startBlock: 27545907
+      startBlock: {{startblock}}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -17,8 +17,11 @@ dataSources:
         - Silo
       abis:
         - name: SiloFactory
-          file: SiloFactory\abis\SiloFactory.json
+          file: ./abis/SiloFactory.json
       eventHandlers:
         - event: NewSilo(indexed address,indexed address,string,string)
           handler: handleSiloCreated
-      file: SiloFactory\SiloFactory.wasm
+      file: ./src/mapping.ts
+      
+      
+      
