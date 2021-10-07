@@ -9,7 +9,8 @@
     "remove-local": "graph remove --node http://localhost:8020/ silo",
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 silo",
     "prepare:kovan": "mustache config/kovan.json subgraph.template.yaml > subgraph.yaml",
-    "prepare:matic": "mustache config/matic.json subgraph.template.yaml > subgraph.yaml"
+    "prepare:matic": "mustache config/matic.json subgraph.template.yaml > subgraph.yaml",
+    "deploy:kovan": "clean codegen build prepare deploy"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.22.0",
