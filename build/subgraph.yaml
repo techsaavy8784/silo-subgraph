@@ -6,9 +6,9 @@ dataSources:
     name: SiloFactory
     network: matic
     source:
-      address: "0x1fDa2729D911F4CF47aE8b3a79113E35F04A7290"
+      address: "0xF416ca12Ad99c8Eb4F5c59fC3061BdcFaf74dA6b"
       abi: SiloFactory
-      startBlock: 19958121
+      startBlock: 20033748
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
